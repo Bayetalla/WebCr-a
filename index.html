@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebCréa – Révision : création d'un site web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">◈</span>
+      <div>
+        <h1>WebCréa</h1>
+        <p>Révision · Création d'un site web</p>
+      </div>
+    </div>
+
+    <div class="global-progress" title="Progression globale">
+      <div class="bar"><div id="globalBar"></div></div>
+      <span id="globalLabel">0 %</span>
+    </div>
+
+    <div class="actions">
+      <input id="search" type="search" placeholder="Rechercher une notion…" aria-label="Rechercher">
+      <button id="expandAll" class="btn" title="Tout développer">Tout ouvrir</button>
+      <button id="collapseAll" class="btn" title="Tout réduire">Tout réduire</button>
+      <div class="zoom">
+        <button id="zoomOut" class="btn icon" aria-label="Dézoomer">−</button>
+        <button id="zoomIn" class="btn icon" aria-label="Zoomer">+</button>
+      </div>
+      <button id="quizBtn" class="btn primary">🎯 Quiz</button>
+      <button id="resetBtn" class="btn ghost" title="Effacer ma progression">Réinitialiser</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="viewport" aria-label="Carte mentale">
+      <div id="tree">
+        <svg id="links" aria-hidden="true"></svg>
+        <div id="nodes"></div>
+      </div>
+    </section>
+
+    <aside id="panel" aria-live="polite"></aside>
+  </main>
+
+  <!-- Quiz -->
+  <div id="quiz" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="quizTitle">Quiz de révision</h2>
+        <span id="quizScore" class="score">0 / 0</span>
+        <button id="quizClose" class="btn icon" aria-label="Fermer">✕</button>
+      </div>
+      <p id="quizQuestion" class="quiz-q"></p>
+      <div id="quizOptions" class="quiz-options"></div>
+      <p id="quizFeedback" class="quiz-feedback"></p>
+      <div class="modal-foot">
+        <button id="quizNext" class="btn primary" disabled>Question suivante →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
